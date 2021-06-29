@@ -3,7 +3,6 @@
 </div>
 <!-- Grid-->
 <hr class="view_border">
-
 <div class="row">
     <!-- List of items-->
     <section class="col-lg-8">
@@ -23,7 +22,6 @@
                                                  alt="Product">
                                         </a>
                                     </div>
-
                                     <div class="media-body d-flex justify-content-center align-items-center">
                                         <div class="cart_product">
                                             <div class="product-title">
@@ -44,19 +42,27 @@
                                     </div>
                                 </div>
                             </div>
+
+
                             <div class="col-md-1 col-sm-2 col-3 d-flex align-items-center">
                                 <div>
                                     <select name="quantity[{{ $key }}]" id="cartQuantity{{$key}}"
                                             onchange="updateCartQuantity('{{$key}}')">
-                                        @for ($i = 1; $i <= 10; $i++)
+                                        @for ($i = 1; $i <= 200; $i++)
                                             <option
                                                 value="{{$i}}" <?php if ($cartItem['quantity'] == $i) echo "selected"?>>
                                                 {{$i}}
+
                                             </option>
+
+
                                         @endfor
+
                                     </select>
                                 </div>
+
                             </div>
+
                             <div
                                 class="col-md-4 col-sm-4 offset-4 offset-sm-0 text-center d-flex justify-content-between align-items-center">
                                 <div class="">
@@ -131,7 +137,7 @@
             },
             success: function (data) {
                 if (data.status == 1) {
-                    toastr.success('Shipping method selected', {
+                    toastr.success('Método de envío seleccionado', {
                         CloseButton: true,
                         ProgressBar: true
                     });
@@ -139,7 +145,7 @@
                         location.reload();
                     }, 2000);
                 } else {
-                    toastr.error('Choose proper shipping method.', {
+                    toastr.error('Elija el método de envío adecuado.', {
                         CloseButton: true,
                         ProgressBar: true
                     });

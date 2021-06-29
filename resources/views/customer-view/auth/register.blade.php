@@ -28,29 +28,29 @@
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label for="reg-fn">{{trans('messages.first_name')}}</label>
-                                        <input class="form-control" type="text" name="f_name" required>
-                                        <div class="invalid-feedback">Please enter your first name!</div>
+                                        <input class="form-control" type="text" name="f_name"  onkeypress="return soloLetras(event)" onblur="limpia()" id="miInput" required >
+                                        <div class="invalid-feedback">¡Por favor, introduzca su nombre !</div>
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label for="reg-ln">{{trans('messages.last_name')}}</label>
-                                        <input class="form-control" type="text" name="l_name">
-                                        <div class="invalid-feedback">Please enter your last name!</div>
+                                        <input class="form-control" type="text" name="l_name" onkeypress="return soloLetras(event)" onblur="limpia()" id="miInput">
+                                        <div class="invalid-feedback">Por favor ingrese su apellido!</div>
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label for="reg-email">{{trans('messages.email_address')}}</label>
                                         <input class="form-control" type="email" name="email">
-                                        <div class="invalid-feedback">Please enter valid email address!</div>
+                                        <div class="invalid-feedback">Por favor ingrese una dirección de correo electrónico válida!</div>
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label for="reg-phone">{{trans('messages.phone_name')}}</label>
                                         <input class="form-control" type="text" name="phone" required>
-                                        <div class="invalid-feedback">Please enter your phone number!</div>
+                                        <div class="invalid-feedback">Por favor, introduzca su número de teléfono!</div>
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
@@ -183,4 +183,32 @@
             });
         });
     </script>
+     <script>
+        function soloLetras(e) {
+            key = e.keyCode || e.which;
+            tecla = String.fromCharCode(key).toLowerCase();
+            letras = " áéíóúabcdefghijklmnñopqrstuvwxyz";
+            especiales = [8, 37, 39, 46];
+
+            tecla_especial = false
+            for(var i in especiales) {
+                if(key == especiales[i]) {
+                    tecla_especial = true;
+                    break;
+                }
+            }
+
+            if(letras.indexOf(tecla) == -1 && !tecla_especial)
+                return false;
+        }
+
+        function limpia() {
+            var val = document.getElementById("miInput").value;
+            var tam = val.length;
+            for(i = 0; i < tam; i++) {
+                if(!isNaN(val[i]))
+                    document.getElementById("miInput").value = '';
+            }
+        }
+        </script>
 @endpush

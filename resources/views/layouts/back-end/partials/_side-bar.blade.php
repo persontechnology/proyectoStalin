@@ -240,12 +240,12 @@
                   <span class="text-truncate">{{trans('messages.InHouse Products')}}</span>
               </a>
           </li>
-          <li class="nav-item {{Request::is('admin/product/list/seller')?'active':''}}">
+          {{-- <li class="nav-item {{Request::is('admin/product/list/seller')?'active':''}}">
             <a class="nav-link "href="{{route('admin.product.list',['seller'])}}" title="Seller Products">
                 <span class="tio-circle nav-indicator-icon"></span>
                 <span class="text-truncate">{{trans('messages.Seller Products')}}</span>
             </a>
-        </li>
+        </li> --}}
 
       </ul>
   </li>

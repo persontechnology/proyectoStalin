@@ -36,7 +36,7 @@ class ShippingMethodController extends Controller
             'updated_at'   => now(),
         ]);
 
-        Toastr::success('Successfully added.');
+        Toastr::success('Agregado exitosamente.');
         return back();
     }
 

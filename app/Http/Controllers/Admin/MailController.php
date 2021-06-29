@@ -28,7 +28,7 @@ class MailController extends Controller
                 "password" => $request['password']
             ])
         ]);
-        Toastr::success('Configuration updated successfully!');
+        Toastr::success('¡Configuración actualizada exitosamente!');
         return back();
     }
 }

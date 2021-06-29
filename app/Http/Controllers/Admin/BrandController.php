@@ -24,7 +24,7 @@ class BrandController extends Controller
         $request->validate([
             'name' => 'required',
         ], [
-            'name.required' => 'Brand name is required!',
+            'name.required' => '¡Se requiere el nombre de la marca!',
         ]);
 
         $x = ImageManager::upload('brand/', 'png', 'brand_image_modal');
@@ -36,7 +36,7 @@ class BrandController extends Controller
             'updated_at' => now(),
         ]);
 
-        Toastr::success('Brand added successfully!');
+        Toastr::success('¡Marca agregada con éxito!');
         return back();
     }
 
@@ -56,7 +56,7 @@ class BrandController extends Controller
         $request->validate([
             'name' => 'required',
         ], [
-            'name.required' => 'Brand name is required!',
+            'name.required' => '¡Se requiere el nombre de la marca!',
         ]);
 
         $b = Brand::find($id);
@@ -69,7 +69,7 @@ class BrandController extends Controller
             'updated_at' => now(),
         ]);
 
-        Toastr::success('Brand updated successfully!');
+        Toastr::success('¡Marca actualizada con éxito!');
         return back();
     }
 

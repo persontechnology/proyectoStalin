@@ -295,7 +295,7 @@
 
                 @php
                     $sub_total+=$details['price']*$details['qty'];
-                    $total_tax+=$details['tax']*$details['qty'];
+                    $total_tax+=$details['tax'];
                     $total_shipping_cost+=\App\Model\ShippingMethod::find($details['shipping_method_id'])->cost;
                     $total_discount_on_product+=$details['discount'];
                     $total+=$subtotal;
@@ -315,17 +315,17 @@
             <td>{{\App\CPU\BackEndHelper::usd_to_currency($sub_total)}} {{\App\CPU\BackEndHelper::currency_code()}}</td>
 
         </tr>
-        {{-- <tr>
-            <th class="gry-color text-left strong bold">TAX</th>
+      <tr>
+            <th class="gry-color text-left strong bold">Impuesto(12%)</th>
             <td>{{\App\CPU\BackEndHelper::usd_to_currency($total_tax)}} {{\App\CPU\BackEndHelper::currency_code()}}</td>
-        </tr> --}}
+        </tr>
         <tr>
             <th class="gry-color text-left strong bold">Recarga De Envio</th>
             <td>{{\App\CPU\BackEndHelper::usd_to_currency($total_shipping_cost)}} {{\App\CPU\BackEndHelper::currency_code()}}</td>
         </tr>
         <tr>
             <th class="gry-color text-left strong bold">Descuento por Cupón</th>
-            <td>- {{\App\CPU\BackEndHelper::usd_to_currency($order->discount)}} {{\App\CPU\BackEndHelper::currency_code()}}</td>
+            <td>- {{\App\CPU\BackEndHelper::usd_to_currency($order['discount_amount'])}} {{\App\CPU\BackEndHelper::currency_code()}}</td>
         </tr>
         <tr class="border-bottom">
             <th class="gry-color text-left strong bold">Descuento en el producto</th>

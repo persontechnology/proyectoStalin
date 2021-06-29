@@ -1,6 +1,6 @@
 @extends('layouts.front-end.app')
 
-@section('title','My Shopping Cart')
+@section('title','Mi carrito de compras')
 
 @push('css_or_js')
     <meta property="og:image" content="{{asset('storage/app/public/company')}}/{{$web_config['web_logo']->value}}"/>

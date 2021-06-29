@@ -178,7 +178,7 @@ class ProductController extends Controller
             $stock_count = (integer)$request['current_stock'];
         }
         if ((integer)$request['current_stock'] != $stock_count) {
-            $validator->getMessageBag()->add('total_stock', 'Stock calculation mismatch!');
+            $validator->getMessageBag()->add('total_stock', '¡Discrepancia en el cálculo de existencias!');
         }
         if ($validator->getMessageBag()->count() > 0) {
             return response()->json(['errors' => Helpers::error_processor($validator)]);
@@ -398,7 +398,7 @@ class ProductController extends Controller
             $stock_count = (integer)$request['current_stock'];
         }
         if ((integer)$request['current_stock'] != $stock_count) {
-            $validator->getMessageBag()->add('total_stock', 'Stock calculation mismatch!');
+            $validator->getMessageBag()->add('total_stock', '¡Discrepancia en el cálculo de existencias!');
         }
         if ($validator->getMessageBag()->count() > 0) {
             return response()->json(['errors' => Helpers::error_processor($validator)]);

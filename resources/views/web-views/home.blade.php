@@ -12,8 +12,13 @@
     <meta property="twitter:title" content="Welcome To {{$web_config['name']->value}} Home"/>
     <meta property="twitter:url" content="{{env('APP_URL')}}">
     <meta property="twitter:description" content="{!! substr($web_config['about']->value,0,100) !!}">
-
+    <script src="{{asset('public/assets/front-end')}}/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="{{asset('public/assets/front-end')}}/css/home.css"/>
+<script>
+    $('#myModal').on('shown.bs.modal', function () {
+  $('#myInput').trigger('focus')
+})
+</script>
     <style>
         .cz-countdown-days {
             color: white !important;
@@ -258,7 +263,9 @@
 
 
                                 <div class="cz-carousel">
+
                                     <div class="d-flex flex-nowrap">
+
                                         @foreach(\App\Model\Banner::where('banner_type','Footer Banner')->where('published',1)->orderBy('id','desc')->take(3)->get() as $banner)
                                             <!-- <div class="footer_banner">
                                                 <a data-toggle="modal" data-target="#quick_banner{{$banner->id}}"
@@ -436,6 +443,70 @@
             </div>
         </div>
     @endif
+
+
+    <!-- Menu de cupon de mayorista-->
+      <div class="container pt-3 mb-4" style="height: 10%;">
+        <div class="row" >
+            <div class="col-md-12">
+                <div class="flash_deal pt-2">
+                    <div class="container">
+                        <div class="row d-flex justify-content-between fd">
+                            <div class="col-xl-12 col-12">
+                                <div class="d-inline-flex displayTab">
+                                   <marquee behavior="" direction=""><center><span class="flash_deal_title mr-3">
+                                    Si tu compra es superior a 6 prendas de la misma recibe un descuento del 30%
+                                </span></center></marquee>
+                                </div>
+                            </div>
+
+                              <div class="col-xl-6 col-8" style="height: 20%;">
+                                <div class="view_all view-btn-div-f float-right">
+
+                                    <div class="pl-2">
+                                        <center><a class="btn btn-outline-accent btn-sm viw-btn-a"
+                                           href="" data-toggle="modal" data-target="#exampleModal">Ver código
+
+                                            <i class="czi-arrow-right ml-1 mr-n1"></i>
+                                        </a></center>
+<!-- Button trigger modal -->
+
+
+  <!-- Modal -->
+                                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">CÓDIGO CUPÓN</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    2QRl8lN74v
+                                                </div>
+                                                <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+
+                                                </div>
+                                            </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- Menu de cupon de mayorista-->
+
+
+
     <!-- Products grid (featured products)-->
     @if($featured_products->count() > 0)
         <section class="container pt-3 mb-2">

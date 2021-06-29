@@ -589,7 +589,7 @@
                             });
                         }
                     } else {
-                        toastr.success('product updated successfully!', {
+                        toastr.success('producto actualizado con éxito!', {
                             CloseButton: true,
                             ProgressBar: true
                         });

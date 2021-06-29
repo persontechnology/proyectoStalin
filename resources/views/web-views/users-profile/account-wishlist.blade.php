@@ -1,6 +1,6 @@
 @extends('layouts.front-end.app')
 
-@section('title','My Wishlists')
+@section('title','Mi lista de deseos')
 
 @push('css_or_js')
     <style>
@@ -35,7 +35,7 @@
         <div class="row">
             <div class="col-md-3"></div>
             <div class="col-md-9 sidebar_heading">
-                <h1 class="h3  mb-0 folot-left headerTitle">{{trans('messages.WISHLIST')}}</h1>
+                <h1 class="h3  mb-0 folot-left headerTitle">Lista de Productos Preferidos</h1>
             </div>
         </div>
     </div>

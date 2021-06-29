@@ -22,7 +22,7 @@ class BannerController extends Controller
             'url' => 'required',
 
         ], [
-            'url.required' => 'url is required!',
+            'url.required' => 'url es obligatoria!',
 
         ]);
         $bannerType = $request->banner_type;
@@ -40,7 +40,7 @@ class BannerController extends Controller
             $banner->photo = $x[0];
         }
         $banner->save();
-        Toastr::success('Banner added successfully!');
+        Toastr::success('Banner agregado exitosamente!');
         return back();
     }
 
@@ -68,7 +68,7 @@ class BannerController extends Controller
             'url' => 'required',
 
         ], [
-            'url.required' => 'url is required!',
+            'url.required' => 'url es obligatoria!',
 
         ]);
         $banner = Banner::find($request->id);

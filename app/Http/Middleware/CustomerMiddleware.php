@@ -20,7 +20,7 @@ class CustomerMiddleware
         if (Auth::guard('customer')->check()) {
             return $next($request);
         }
-        Toastr::error('Unauthenticated, login first!');
+        Toastr::error('No autenticado, inicie sesión primero.');
         return back();
     }
 }

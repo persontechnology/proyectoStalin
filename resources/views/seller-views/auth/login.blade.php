@@ -48,7 +48,7 @@
             <div class="col-md-7 col-lg-5">
                 <!-- Card -->
                 <div class="card card-lg mb-5">
-                   
+
                     <div class="card-body">
                         <!-- Form -->
                         <form class="js-validate" action="{{route('seller.auth.login')}}" method="post">
@@ -57,7 +57,7 @@
                             <div class="text-center">
                                 <div class="mb-5">
                                     <h1 class="display-4">Registrarse</h1>
-                                    <center><h1 class="h4 text-gray-900 mb-4">Bienvenido</h1></center> 
+                                    <center><h1 class="h4 text-gray-900 mb-4">Bienvenido</h1></center>
                                     {{--<p>Don't have an account yet?
                                         <a href="authentication-signup-basic.html">
                                             Sign up here
@@ -125,14 +125,14 @@
                             </div>
                             <!-- End Checkbox -->
 
-                            <button type="submit" class="btn btn-lg btn-block btn-primary">Iniciar Seción</button>
+                            <button type="submit" class="btn btn-lg btn-block btn-primary">Iniciar Sesión</button>
                         </form>
                         <!-- End Form -->
                     </div>
                 </div>
                 <!-- End Card -->
 
-             
+
             </div>
         </div>
     </div>

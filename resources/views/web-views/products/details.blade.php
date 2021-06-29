@@ -298,8 +298,6 @@
                         <span
                             class="d-inline-block font-size-sm text-body align-middle mt-1 ml-1 mr-md-2 mr-1 pl-md-2 pl-sm-1 pr-md-2 pr-sm-1 font-for-tab">{{$countOrder}} {{trans('messages.orders')}}   </span>
                         <span style="width: 0px;height: 10px;border: 0.5px solid #707070; margin-top: 6px">    </span>
-                        <span
-                            class=" font-for-tab d-inline-block font-size-sm text-body align-middle mt-1 ml-1 mr-md-2 mr-0 pl-md-2 pl-sm-1 pr-md-2 pr-sm-1">  {{$countWishlist}} {{trans('messages.wish')}} </span>
 
                     </div>
                     <div class="mb-3">
@@ -378,7 +376,11 @@
                             </div>
                         @endforeach
 
+
+
+
                     <!-- Quantity + Add to cart -->
+
                         <div class="row no-gutters">
                             <div class="col-2">
                                 <div class="product-description-label mt-2">Cantidad:</div>

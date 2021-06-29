@@ -206,7 +206,7 @@
                                             <div class="col-md-3 mb-3 mb-md-0 product-name">
                                                 <p>
                                                     {{substr($detail->product['name'],0,10)}}{{strlen($detail->product['name'])>10?'...':''}}</p>
-                                                <strong><u>{{trans('messages.Variation')}} : </u></strong>
+                                                <strong><u>Talla: </u></strong>
 
                                                 <div class="font-size-sm text-body">
 
@@ -229,7 +229,7 @@
                                             <div class="col col-md-2 align-self-center  p-0 product-name">
 
                                                 <h5>
-                                                    - {{\App\CPU\BackEndHelper::usd_to_currency($detail['discount'])}}</h5>
+                                                    - {{\App\CPU\BackEndHelper::usd_to_currency($order['discount_amount'])}}</h5>
                                             </div>
                                             <div class="col col-md-2 align-self-center  p-0">
                                                 <select name="delivery_status" class="product_status form-control small"
@@ -248,7 +248,7 @@
                                             </div>
 
                                             <div class="col col-md-2 align-self-center text-right  ">
-                                                @php($subtotal=$detail['price']*$detail->qty+$detail['tax']-$detail['discount'])
+                                                @php($subtotal=$detail['price']*$detail->qty+$detail['tax']-$order['discount_amount'])
 
                                                 <h5 style="font-size: 12px">{{\App\CPU\BackEndHelper::usd_to_currency($subtotal).' '.\App\CPU\BackEndHelper::currency_symbol()}}</h5>
                                             </div>
@@ -256,7 +256,7 @@
                                     </div>
                                 </div>
 
-                            @php($discount+=$detail['discount'])
+                            @php($discount+=$order['discount_amount'])
                             @php($tax+=$detail['tax'])
                             @php($shipping+=$detail->shipping ? $detail->shipping->cost :0)
 

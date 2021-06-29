@@ -17,6 +17,7 @@ class CartController extends Controller
         $str = '';
         $quantity = 0;
         $price = 0;
+        $sumaProductos=0;
 
         if ($request->has('color')) {
             $data['color'] = $request['color'];
@@ -37,6 +38,7 @@ class CartController extends Controller
                 if (json_decode($product->variation)[$i]->type == $str) {
                     $price = json_decode($product->variation)[$i]->price - Helpers::get_product_discount($product, json_decode($product->variation)[$i]->price);
                     $quantity = json_decode($product->variation)[$i]->qty;
+                    $sumaProductos=$sumaProductos+$quantity;
                 }
             }
         } else {

@@ -31,6 +31,7 @@
     <div class="cart_total">
         @php($sub_total=0)
         @php($total_tax=0)
+        @php($total_pro=0)
         @php($total_shipping_cost=0)
         @php($total_discount_on_product=0)
         @if(session()->has('cart') && count( session()->get('cart')) > 0)
@@ -44,6 +45,7 @@
                 @php($total_tax+=$cartItem['tax']*$cartItem['quantity'])
                 @php($total_shipping_cost+=$cartItem['shipping_cost'])
                 @php($total_discount_on_product+=$cartItem['discount']*$cartItem['quantity'])
+                @php($total_pro=$total_pro+$cartItem['quantity'])
             @endforeach
         @else
             <span>Empty Cart</span>
@@ -72,7 +74,7 @@
                 - {{\App\CPU\Helpers::currency_converter($total_discount_on_product)}}
             </span>
         </div>
-        @if(session()->has('coupon_discount'))
+        @if(session()->has('coupon_discount') )
             <div class="d-flex justify-content-between">
                 <span class="cart_title">Cupón de descuento</span>
                 <span class="cart_value" id="coupon-discount-amount">

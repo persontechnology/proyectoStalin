@@ -90,7 +90,7 @@ class LanguageController extends Controller
         $data = array_combine($request['key'], $request['value']);
         $str = "<?php return " . var_export($data, true) . ";";
         file_put_contents(base_path('resources/lang/' . $lang . '/messages.php'), $str);
-        Toastr::success('Translation file updated!');
+        Toastr::success('¡Archivo de traducción actualizado!');
         return back();
     }
 
@@ -119,7 +119,7 @@ class LanguageController extends Controller
         }
         rmdir($dir);
 
-        Toastr::success('Removed Successfully!');
+        Toastr::success('¡Eliminado con éxito!');
         return back();
     }
 }

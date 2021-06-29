@@ -41,7 +41,7 @@ class DealController extends Controller
             'created_at'       => now(),
             'updated_at'       => now(),
         ]);
-        Toastr::success('Deal added successfully!');
+        Toastr::success('¡Oferta agregada con éxito!');
         return back();
     }
 
@@ -74,7 +74,7 @@ class DealController extends Controller
             'status'           => $deal['status'],
             'updated_at'       => now(),
         ]);
-        Toastr::success('Deal updated successfully!');
+        Toastr::success('¡Oferta actualizada con éxito!');
         return back();
     }
 
@@ -195,14 +195,14 @@ class DealController extends Controller
             'status'        => 0,
             'updated_at'    => now(),
         ]);
-        Toastr::success('Deal updated successfully!');
+        Toastr::success('¡Oferta actualizada con éxito!');
         return redirect()->route('admin.deal.day');
     }
 
     public function day_delete($id)
     {
         DealOfTheDay::destroy($id);
-        Toastr::success('Deal removed successfully!');
+        Toastr::success('¡Oferta eliminada con éxito!');
         return back();
     }
 }

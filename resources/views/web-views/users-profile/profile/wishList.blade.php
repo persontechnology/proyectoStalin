@@ -18,7 +18,7 @@
             max-width: 20rem;
         }
 
-      
+
 
         .border:hover{
             border: 3px solid #4884ea;
@@ -67,7 +67,7 @@
    color: #FFFFFF;
     font-weight: 400;
     font-size: 13px;
-    
+
 }
 .font-name{
     font-weight: 600;
@@ -85,7 +85,7 @@
     margin-top: 4px;
      color:  #1B7FED;
      font-weight: 600;
- 
+
 
 }
 
@@ -125,7 +125,7 @@ a:hover{
  .mrl{
      margin-left: 6px;
  }
- 
+
 @media(max-width:600px){
     .sidebar_heading{
         background: #1B7FED;
@@ -154,7 +154,7 @@ a:hover{
  .amount{
      font-size: 12px;
  }
-  
+
 }
 @media(max-width:600px){
     .wishlist_product_img{
@@ -184,7 +184,7 @@ a:hover{
         <div class="row">
             <div class="col-md-3"></div>
             <div class="col-md-9 sidebar_heading">
-           <h1 class="h3  mb-0 folot-left headerTitle">WISHLIST</h1>
+           <h1 class="h3  mb-0 folot-left headerTitle">LISTA DE DESEOS</h1>
             </div>
         </div>
 
@@ -199,7 +199,7 @@ a:hover{
                 <!--Price Sidebar-->
                 <div class="price_sidebar rounded-lg box-shadow-sm" id="shop-sidebar" style="margin-bottom: -10px;">
                     <div class="box-shadow-sm">
-                       
+
                     </div>
                     <div class="pb-0" style="padding-top: 12px;">
                         <!-- Filter by price-->
@@ -284,13 +284,13 @@ a:hover{
                                 <div class="wishlist_product_desc col-md-4 mt-4">
                                     <span class="font-name">Bee Willow Home Hand-quilted Velvet Quiit Set</span>
                                         <span class="sellerName">Bee Willow Home </span>
-                                        
+
                                     <div class="product-qty"> <span class="d-block">Size: XL</span></div>
                                     <div class=""> <span class="font-weight-bold amount">$345.50</span> </div>
                                 </div>
-                                <div class="wishlist_product_btn col-md-6 col-lg-6 col-sm-6 mt-5 float-right bodytr font-weight-bold" style="color: #92C6FF;">  
-                                    
-                                    <span class="amount wishlist_product_cart_btn" style="margin-left: 15rem;"> <a href="" class="addtocart"> Add To Cart</a></span> 
+                                <div class="wishlist_product_btn col-md-6 col-lg-6 col-sm-6 mt-5 float-right bodytr font-weight-bold" style="color: #92C6FF;">
+
+                                    <span class="amount wishlist_product_cart_btn" style="margin-left: 15rem;"> <a href="" class="addtocart"> Add To Cart</a></span>
                                     <a href=""  class="wishlist_product_icon ml-2"><i class="czi-close-circle" style="color: red" ></i></a>
                                 </div>
                             </div>
@@ -299,7 +299,7 @@ a:hover{
                 </div>
 
                          <div class="card box-shadow-sm mt-2">
-          
+
                      <div class="product mb-2 ">
                             <div class="card">
                                 <div class="row forPadding">
@@ -307,7 +307,7 @@ a:hover{
                                     <div class="col-md-4 mt-4 wishlist_product_desc">
                                         <span class="font-name">Bee Willow Home Hand-quilted Velvet Quiit Set</span>
                                          <span class="sellerName">Bee Willow Home </span>
-                                       
+
                                         <div class="product-qty"> <span class="d-block">Size: XL</span></div>
                                         <div class=""> <span class="font-weight-bold amount">$345.50</span> </div>
                                     </div>
@@ -319,7 +319,7 @@ a:hover{
                         </div>
 
  <div class="card box-shadow-sm mt-2">
-          
+
                      <div class="product mb-2 ">
                             <div class="card">
                                 <div class="row forPadding">
@@ -327,12 +327,12 @@ a:hover{
                                     <div class="col-md-4 mt-4 wishlist_product_desc">
                                         <span class="font-name">Bee Willow Home Hand-quilted Velvet Quiit Set</span>
                                          <span class="sellerName">Bee Willow Home </span>
-                                          
+
                                         <div class="product-qty"> <span class="d-block">Size: XL</span></div>
                                         <div class=""> <span class="font-weight-bold amount">$345.50</span> </div>
                                     </div>
                                     <div class="col-md-6 mt-5 wishlist_product_btn">  <td class="bodytr font-weight-bold" style="color: #92C6FF;"> <a href=""></a>
-                                        <span class="wishlist_product_cart_btn amount" style="margin-left: 15rem;"> <a href="" class="addtocart"> Add To Cart</a></span> 
+                                        <span class="wishlist_product_cart_btn amount" style="margin-left: 15rem;"> <a href="" class="addtocart"> Add To Cart</a></span>
                                         <a href=""  class="wishlist_product_icon ml-2"><i class="czi-close-circle" style="color: red" ></i></a></td>
                                     </div>
                                 </div>
@@ -354,12 +354,12 @@ a:hover{
                                         </td>
                                             </div>
                                             <td width="20%">
-                                                <div class="marginLeft"> <span class=" amount" > <a href="" class="addtocart"> Add To Cart</a></span> 
+                                                <div class="marginLeft"> <span class=" amount" > <a href="" class="addtocart"> Add To Cart</a></span>
                                                     <a href="" ><i class="czi-close-circle mrl" style="color: red" ></i></a></div>
                                             </td>
                                         </div>
                                     </tr>
-                                  
+
                                    <tr>
                                         <div class="row">
                                             <div class="col-md-3">
@@ -374,8 +374,8 @@ a:hover{
                                         </td>
                                             </div>
                                         </div>
-                                      
-                                     
+
+
                                     </tr>
                                 </tbody>
                             </table>
@@ -385,8 +385,8 @@ a:hover{
             </section>
 
                 </div>
-     
-          
+
+
         </div>
     </div>
 

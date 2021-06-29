@@ -578,18 +578,18 @@ class WebController extends Controller
                     $wishlist->save();
 
                     $countWishlist = Wishlist::where('customer_id', auth('customer')->id())->get();
-                    $data = "Product has been added to wishlist";
+                    $data = "El producto se ha agregado a la lista de deseos";
 
                     $product_count = Wishlist::where(['product_id' => $request->product_id])->count();
                     session()->put('wish_list', Wishlist::where('customer_id', auth('customer')->user()->id)->pluck('product_id')->toArray());
                     return response()->json(['success' => $data, 'value' => 1, 'count' => count($countWishlist), 'id' => $request->product_id, 'product_count' => $product_count]);
                 } else {
-                    $data = "Product already added to wishlist";
+                    $data = "Producto ya agregado a la lista de deseos";
                     return response()->json(['error' => $data, 'value' => 2]);
                 }
 
             } else {
-                $data = "Please login first";
+                $data = "Por favor Logeate primero";
                 return response()->json(['error' => $data, 'value' => 0]);
             }
         }
@@ -598,7 +598,7 @@ class WebController extends Controller
     public function deleteWishlist(Request $request)
     {
         Wishlist::where(['product_id' => $request['id'], 'customer_id' => auth('customer')->id()])->delete();
-        $data = "Product has been remove from wishlist!";
+        $data = "¡El producto ha sido eliminado de la lista de deseos!";
         $wishlists = Wishlist::where('customer_id', auth('customer')->id())->get();
         session()->put('wish_list', Wishlist::where('customer_id', auth('customer')->user()->id)->pluck('product_id')->toArray());
         return response()->json([

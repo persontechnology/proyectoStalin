@@ -35,7 +35,7 @@ class ProfileController extends Controller
         $admin->image = $x[0];
         $admin->save();
 
-        Toastr::info('Profile updated successfully!');
+        Toastr::info('¡Perfil actualizado con éxito!');
         return back();
     }
     public function settings_password_update(Request $request)
@@ -48,7 +48,7 @@ class ProfileController extends Controller
         $admin = Admin::find(auth('admin')->id());
         $admin->password = bcrypt($request['password']);
         $admin->save();
-        Toastr::success('Admin password updated successfully!');
+        Toastr::success('¡La contraseña de administrador se actualizó correctamente!');
         return back();
     }
 

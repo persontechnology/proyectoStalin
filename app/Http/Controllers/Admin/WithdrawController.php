@@ -40,7 +40,7 @@ class WithdrawController extends Controller
             return redirect()->back();
         }
 
-        Toastr::error('invalid request.!');
+        Toastr::error('Solicitud no válida.!');
         return redirect()->back();
     }
 }

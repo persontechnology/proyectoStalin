@@ -771,14 +771,14 @@
                     if (data.data == 1) {
                         Swal.fire({
                             icon: 'info',
-                            title: 'Cart',
-                            text: "Product already added in cart"
+                            title: 'Alerta!',
+                            text: "Producto ya agregado al carrito"
                         });
                         return false;
                     }
                     $('.call-when-done').click();
 
-                    toastr.success('Item has been added in your cart!', {
+                    toastr.success('¡El artículo ha sido agregado a su carrito!', {
                         CloseButton: true,
                         ProgressBar: true
                     });
@@ -793,8 +793,8 @@
         } else {
             Swal.fire({
                 type: 'info',
-                title: 'Cart',
-                text: 'Please choose all the options'
+                title: 'Alerta!',
+                text: 'Elija todas las opciones'
             });
         }
     }
@@ -817,7 +817,7 @@
                 currency_code: currency_code
             },
             success: function (data) {
-                toastr.success('Currency changed to' + data.name);
+                toastr.success('Moneda cambiada a' + data.name);
                 location.reload();
             }
         });
@@ -828,7 +828,7 @@
             updateNavCart();
             updateToolbar();
             $('#cart-summary').empty().html(data);
-            toastr.info('Item has been removed from cart', {
+            toastr.info('El artículo ha sido eliminado del carrito.', {
                 CloseButton: true,
                 ProgressBar: true
             });
@@ -897,8 +897,8 @@
             } else {
                 Swal.fire({
                     icon: 'error',
-                    title: 'Cart',
-                    text: 'Sorry, the minimum value was reached'
+                    title: 'Alerta!',
+                    text: 'Lo sentimos, se alcanzó el valor mínimo'
                 });
                 $(this).val($(this).data('oldValue'));
             }
@@ -907,8 +907,8 @@
             } else {
                 Swal.fire({
                     icon: 'error',
-                    title: 'Cart',
-                    text: 'Sorry, stock limit exceeded.'
+                    title: 'Alerta!',
+                    text: 'Lo sentimos, se superó el límite de existencias.'
                 });
                 $(this).val($(this).data('oldValue'));
             }
@@ -953,7 +953,7 @@
         }, function (data) {
             updateNavCart();
             updateToolbar();
-            toastr.info('Quantity updated!', {
+            toastr.info('Cantidad actualizada!', {
                 CloseButton: true,
                 ProgressBar: true
             });

@@ -21,7 +21,7 @@ class CustomRoleController extends Controller
         $request->validate([
             'name' => 'required|unique:admin_roles',
         ],[
-            'name.required'=>'Role name is required!'
+            'name.required'=>'¡El nombre del rol es obligatorio!'
         ]);
 
         DB::table('admin_roles')->insert([
@@ -32,7 +32,7 @@ class CustomRoleController extends Controller
             'updated_at'=>now()
         ]);
 
-        Toastr::success('Role added successfully!');
+        Toastr::success('¡Rol agregado exitosamente!');
         return back();
     }
 
@@ -47,7 +47,7 @@ class CustomRoleController extends Controller
         $request->validate([
             'name' => 'required',
         ],[
-            'name.required'=>'Role name is required!'
+            'name.required'=>'¡El nombre del rol es obligatorio!'
         ]);
 
         DB::table('admin_roles')->where(['id'=>$id])->update([
@@ -57,7 +57,7 @@ class CustomRoleController extends Controller
             'updated_at'=>now()
         ]);
 
-        Toastr::info('Role updated successfully!');
+        Toastr::info('¡Rol actualizado con éxito!');
         return back();
     }
 }

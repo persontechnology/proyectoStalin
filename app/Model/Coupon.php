@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Coupon extends Model
 {
     protected $casts = [
+
         'min_purchase' => 'float',
         'max_discount' => 'float',
         'discount'     => 'float',

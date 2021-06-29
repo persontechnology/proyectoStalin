@@ -258,7 +258,7 @@
     'currency_name' => 'Nombre de la moneda',
     'currency_symbol' => 'Símbolo de moneda',
     'currency_code' => 'Código de moneda',
-    'exchange_rate (1 USD =?)' => 'Tipo de cambio (1 USD =?)',
+    'exchange_rate(1 USD= ?)' => 'Tipo de cambio (1 USD =?)',
     'industry' => 'Tipo de industria',
     'Channel' => 'Canal',
     'Website' => 'Sitio web',

@@ -32,7 +32,7 @@ class BusinessSettingsController extends Controller
             'about_us' => 'required',
         ]);
         BusinessSetting::where('type', 'about_us')->update(['value' => $data->about_us]);
-        Toastr::success('About Us updated successfully!');
+        Toastr::success('Sobre nosotros actualizado con éxito!');
         return back();
     }
 
@@ -113,7 +113,7 @@ class BusinessSettingsController extends Controller
 
         }
 
-        Toastr::success('Removed successfully!');
+        Toastr::success('¡Eliminado con éxito!');
         // return back();
         return response()->json();
     }
@@ -140,7 +140,7 @@ class BusinessSettingsController extends Controller
             'value' => 'required',
         ]);
         BusinessSetting::where('type', 'terms_condition')->update(['value' => $data->value]);
-        Toastr::success('Terms and Condition Updated successfully!');
+        Toastr::success('¡Términos y condiciones actualizados con éxito!');
         return redirect()->back();
     }
 
@@ -170,7 +170,7 @@ class BusinessSettingsController extends Controller
             DB::table('business_settings')->insert(['type' => 'sales_commission', 'value' => $data->commission]);
         }
 
-        Toastr::success('Sales commission Updated successfully!');
+        Toastr::success('Comisión de venta ¡Actualizado con éxito!');
         return redirect()->back();
     }
 
@@ -180,7 +180,7 @@ class BusinessSettingsController extends Controller
             'company_name' => 'required',
         ]);
         BusinessSetting::where('type', 'company_name')->update(['value' => $data->company_name]);
-        Toastr::success('Company Updated successfully!');
+        Toastr::success('Empresa actualizada con éxito!');
         return redirect()->back();
     }
 
@@ -190,7 +190,7 @@ class BusinessSettingsController extends Controller
             'company_email' => 'required',
         ]);
         BusinessSetting::where('type', 'company_email')->update(['value' => $data->company_email]);
-        Toastr::success('Company Email Updated successfully!');
+        Toastr::success('Correo electrónico de la empresa ¡Actualizado con éxito!');
         return redirect()->back();
     }
 
@@ -200,7 +200,7 @@ class BusinessSettingsController extends Controller
             'company_copyright_text' => 'required',
         ]);
         BusinessSetting::where('type', 'company_copyright_text')->update(['value' => $data->company_copyright_text]);
-        Toastr::success('Company Copy Right Updated successfully!');
+        Toastr::success('Derecho de copia de la empresa ¡Actualizado con éxito!');
         return redirect()->back();
     }
 
@@ -256,7 +256,7 @@ class BusinessSettingsController extends Controller
                 ]);
             }
         }
-        Toastr::success('App Store Updated successfully');
+        Toastr::success('App Store actualizada correctamente');
 
         return back();
     }
@@ -267,7 +267,7 @@ class BusinessSettingsController extends Controller
             'company_phone' => 'required',
         ]);
         BusinessSetting::where('type', 'company_phone')->update(['value' => $data->company_phone]);
-        Toastr::success('Company Phone Updated successfully!');
+        Toastr::success('Teléfono de la empresa ¡Actualizado con éxito!');
         return redirect()->back();
     }
 
@@ -288,7 +288,7 @@ class BusinessSettingsController extends Controller
         BusinessSetting::where(['type' => 'company_footer_logo'])->update([
             'value' => $logo[0],
         ]);
-        Toastr::success('Footer Logo updated successfully!');
+        Toastr::success('¡Logotipo de pie de página actualizado correctamente!');
         return back();
 
     }
@@ -299,7 +299,7 @@ class BusinessSettingsController extends Controller
         BusinessSetting::where(['type' => 'company_fav_icon'])->update([
             'value' => $logo[0],
         ]);
-        Toastr::success('Fav Icon updated successfully!');
+        Toastr::success('¡El icono de favoritos se actualizó correctamente!');
         return back();
 
     }
@@ -335,7 +335,7 @@ class BusinessSettingsController extends Controller
                     ]),
             ]);
         }
-        Toastr::success('Color  updated!');
+        Toastr::success('¡Color actualizado!');
         return back();
     }
     public function fcm_index()
@@ -463,7 +463,7 @@ class BusinessSettingsController extends Controller
             ]),
         ]);
 
-        Toastr::success('Message updated!');
+        Toastr::success('Mensaje actualizado!');
         return back();
     }
 }

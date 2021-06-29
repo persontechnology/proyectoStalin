@@ -32,7 +32,7 @@ class SystemController extends Controller
         $request->validate([
             'key' => 'required',
         ], [
-            'key.required' => 'Product name is required!',
+            'key.required' => '¡El nombre del producto es obligatorio!',
         ]);
 
         $key = explode(' ', $request->key);

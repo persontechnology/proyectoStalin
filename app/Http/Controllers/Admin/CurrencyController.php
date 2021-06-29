@@ -23,7 +23,7 @@ class CurrencyController extends Controller
         $currency->code = $request->code;
         $currency->exchange_rate = $request->exchange_rate;
         $currency->save();
-        Toastr::success('New Currency inserted successfully!');
+        Toastr::success('¡Nueva moneda insertada correctamente!');
         return redirect()->back();
     }
 
@@ -35,7 +35,7 @@ class CurrencyController extends Controller
         $currency->code = $request->code;
         $currency->exchange_rate = $request->exchange_rate;
         $currency->save();
-        Toastr::success('Currency updated successfully!');
+        Toastr::success('¡Moneda actualizada correctamente!');
         return redirect()->back();
     }
     public function delete(Request $request)
@@ -65,7 +65,7 @@ class CurrencyController extends Controller
                 $business_settings->value = $request[$request->type];
                 $business_settings->save();
             }
-        Toastr::success('System Default currency updated successfully!');
+        Toastr::success('¡La moneda predeterminada del sistema se actualizó correctamente!');
         return redirect()->back();
     }
 }

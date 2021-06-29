@@ -26,7 +26,7 @@ class NotificationController extends Controller
             'description' => 'required',
             'image'       => 'required',
         ], [
-            'title.required' => 'title is required!',
+            'title.required' => '¡El título es obligatorio!',
         ]);
 
         if (!empty($request->file('image'))) {
@@ -50,10 +50,10 @@ class NotificationController extends Controller
         try {
             Helpers::send_push_notif_to_topic($notification);
         } catch (\Exception $e) {
-            Toastr::warning('Push notification failed!');
+            Toastr::warning('Falló la notificación push!');
         }
 
-        Toastr::success('Notification sent successfully!');
+        Toastr::success('¡Notificación enviada con éxito!');
         return back();
     }
 
@@ -69,7 +69,7 @@ class NotificationController extends Controller
             'title'       => 'required',
             'description' => 'required',
         ], [
-            'title.required' => 'title is required!',
+            'title.required' => '¡El título es obligatorio!',
         ]);
 
         $notification = Notification::find($id);
@@ -92,7 +92,7 @@ class NotificationController extends Controller
         $notification->description = $request->description;
         $notification->image = $image_name;
         $notification->save();
-        Toastr::success('Notification updated successfully!');
+        Toastr::success('¡Notificación actualizada correctamente!');
         return back();
     }
 

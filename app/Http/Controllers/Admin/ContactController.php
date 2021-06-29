@@ -29,7 +29,7 @@ class ContactController extends Controller
         $contact->message = $request->message;
         $contact->save();
 
-        return response()->json(['success' => 'Your Message Send Successfully']);
+        return response()->json(['success' => 'Su mensaje se envía correctamente']);
 
     }
     public function list() {
@@ -48,7 +48,7 @@ class ContactController extends Controller
         $contact->feedback = $request->feedback;
         $contact->seen = 1;
         $contact->update();
-        Toastr::success('Feedback  Update successfully!');
+        Toastr::success('Comentarios ¡Actualización con éxito!');
         return redirect()->route('admin.contact.list');
     }
     public function destroy(Request $request)

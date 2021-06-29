@@ -136,7 +136,7 @@ class OrderController extends Controller
         if ($request->ajax()) {
             $order = OrderDetail::find($request->id);
             if ($order->delivery_status == 'delivered') {
-                return response()->json(['success' => 0, 'message' => 'order is already delivered.'], 200);
+                return response()->json(['success' => 0, 'message' => 'el pedido ya está entregado.'], 200);
             }
             $order->delivery_status = $request->delivery_status;
             $order->save();

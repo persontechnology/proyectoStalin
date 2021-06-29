@@ -21,8 +21,8 @@ class HelpTopicController extends Controller
             'question' => 'required',
             'answer'   => 'required',
         ], [
-            'question.required' => 'Question name is required!',
-            'answer.required'   => 'Question answer is required!',
+            'question.required' => '¡El nombre de la pregunta es obligatorio!',
+            'answer.required'   => '¡Se requiere la respuesta a la pregunta!',
 
         ]);
         $helps = new HelpTopic;
@@ -30,7 +30,7 @@ class HelpTopicController extends Controller
         $helps->answer = $request->answer;
         $helps->save();
 
-        Toastr::success('FAQ added successfully!');
+        Toastr::success('¡Preguntas frecuentes agregadas con éxito!');
         return back();
     }
     public function status($id)
@@ -59,8 +59,8 @@ class HelpTopicController extends Controller
             'question' => 'required',
             'answer'   => 'required',
         ], [
-            'question.required' => 'Question name is required!',
-            'answer.required'   => 'Question answer is required!',
+            'question.required' => '¡El nombre de la pregunta es obligatorio!',
+            'answer.required'   => '¡Se requiere la respuesta a la pregunta!',
 
         ]);
         $helps = HelpTopic::find($id);
@@ -68,7 +68,7 @@ class HelpTopicController extends Controller
         $helps->answer = $request->answer;
         $helps->ranking = $request->ranking;
         $helps->update();
-        Toastr::success('FAQ Update successfully!');
+        Toastr::success('Preguntas frecuentes ¡Actualización con éxito!');
         return back();
     }
 

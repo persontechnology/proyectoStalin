@@ -43,9 +43,9 @@ class LoginController extends Controller
         if (auth('customer')->attempt(['email' => $request->email, 'password' => $request->password], $remember)) {
             session()->put('wish_list', Wishlist::where('customer_id', auth('customer')->user()->id)->pluck('product_id')->toArray());
             if ($request->ajax()) {
-                return response()->json(['message' => 'Signed in successfully!', 'url' => session('keep_return_url')]);
+                return response()->json(['message' => '¡Accediste exitosamente!', 'url' => session('keep_return_url')]);
             }
-            Toastr::info('Welcome to ' . $this->company_name->value . '!');
+            Toastr::info('Bienvenido a ' . $this->company_name->value . '!');
             return redirect(session('keep_return_url'));
         }
 
@@ -53,14 +53,14 @@ class LoginController extends Controller
             return response()->json(['message' => 'Credentials do not match.'], 401);
         }
 
-        Toastr::error('Credentials do not match.');
+        Toastr::error('Las credenciales no coinciden.');
         return back();
     }
 
     public function logout(Request $request)
     {
         auth()->guard('customer')->logout();
-        Toastr::info('Come back soon, ' . '!');
+        Toastr::info('Vuelve pronto, ' . '!');
         return redirect()->route('home');
     }
 }

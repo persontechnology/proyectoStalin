@@ -22,7 +22,7 @@ class CustomerController extends Controller
             $orders = Order::latest()->where(['customer_id' => $id])->paginate(5);
             return view('admin-views.customer.customer-view', compact('customer', 'orders'));
         }
-        Toastr::error('Customer not found!');
+        Toastr::error('Cliente no encontrado!');
         return back();
     }
 }

@@ -43,7 +43,7 @@ class CouponController extends Controller
             'updated_at'    => now(),
         ]);
 
-        Toastr::success('Coupon added successfully!');
+        Toastr::success('¡Cupón agregado exitosamente!');
         return back();
     }
 
@@ -77,7 +77,7 @@ class CouponController extends Controller
             'updated_at'    => now(),
         ]);
 
-        Toastr::success('Coupon updated successfully!');
+        Toastr::success('¡Cupón actualizado con éxito!');
         return back();
     }
     public function status(Request $request)

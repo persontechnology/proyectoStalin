@@ -52,7 +52,7 @@
                                 <ul class="nav nav-tabs mt-2 d-flex justify-content-between" role="tablist">
                                     <li class="nav-item d-inline-block">
                                         <a class="nav-link active" href="#signin" data-toggle="tab" role="tab">
-                                            Iniciar Seción
+                                            Iniciar Sesión
                                         </a>
                                     </li>
                                     <li class="nav-item d-inline-block">
@@ -78,7 +78,7 @@
                                                                id="si-email" value="{{old('email')}}"
                                                                placeholder="@gmail.com"
                                                                required>
-                                                        <div class="invalid-feedback">Please provide a valid email
+                                                        <div class="invalid-feedback">Proporcione un correo electrónico válido
                                                             address.
                                                         </div>
                                                     </div>
@@ -135,7 +135,7 @@
                                                     <div class="form-group">
                                                         <label for="su-name">{{trans('messages.first_name')}}</label>
                                                         <input class="form-control" type="text" name="f_name"
-                                                               placeholder="" required>
+                                                               placeholder="" required onkeypress="return soloLetras(event)">
                                                         <div class="invalid-feedback">Por favor, ponga su nombre.</div>
                                                     </div>
                                                 </div>
@@ -143,8 +143,8 @@
                                                     <div class="form-group">
                                                         <label for="su-name">{{trans('messages.last_name')}} </label>
                                                         <input class="form-control" type="text" name="l_name"
-                                                               placeholder="" required>
-                                                        <div class="invalid-feedback">Por favor, ponga su segundo nombre</div>
+                                                               placeholder="" required onkeypress="return soloLetras(event)">
+                                                        <div class="invalid-feedback">Por favor, ponga su Apellido</div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -157,7 +157,7 @@
                                                                id="su-email"
                                                                placeholder="@gmail.com"
                                                                required>
-                                                        <div class="invalid-feedback">Please provide a valid email
+                                                        <div class="invalid-feedback">Proporcione un correo electrónico válido
                                                             address.
                                                         </div>
                                                     </div>
@@ -167,9 +167,8 @@
                                                         <label for="su-email">{{trans('messages.Phone')}}</label>
                                                         <input class="form-control" name="phone" type="number"
                                                                id="su-phone" placeholder="+593*********"
-                                                               required>
-                                                        <div class="invalid-feedback">Please provide a valid phone
-                                                            number.
+                                                               minlength="5" maxlength="10" required >
+                                                        <div class="invalid-feedback">Por favor provea un número de teléfono válido.
                                                         </div>
                                                     </div>
                                                 </div>
@@ -328,5 +327,32 @@
             });
         });
     </script>
+    <script>
+  function soloLetras(e) {
+      key = e.keyCode || e.which;
+      tecla = String.fromCharCode(key).toLowerCase();
+      letras = " áéíóúabcdefghijklmnñopqrstuvwxyz";
+      especiales = [8, 37, 39, 46];
 
+      tecla_especial = false
+      for(var i in especiales) {
+          if(key == especiales[i]) {
+              tecla_especial = true;
+              break;
+          }
+      }
+
+      if(letras.indexOf(tecla) == -1 && !tecla_especial)
+          return false;
+  }
+
+  function limpia() {
+      var val = document.getElementById("miInput").value;
+      var tam = val.length;
+      for(i = 0; i < tam; i++) {
+          if(!isNaN(val[i]))
+              document.getElementById("miInput").value = '';
+      }
+  }
+  </script>
 @endpush

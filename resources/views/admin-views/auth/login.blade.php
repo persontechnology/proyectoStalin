@@ -55,7 +55,7 @@
 
                             <div class="text-center">
                                 <div class="mb-5">
-                                    <h1 class="display-4">Iniciar Seción</h1>
+                                    <h1 class="display-4">Iniciar Sesión</h1>
                                     {{--<p>Don't have an account yet?
                                         <a href="authentication-signup-basic.html">
                                             Sign up here

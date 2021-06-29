@@ -284,9 +284,9 @@
                 },
                 success: function (data) {
                     if (data == 1) {
-                        toastr.success('Coupon published successfully');
+                        toastr.success('Cupón publicado con éxito');
                     } else {
-                        toastr.success('Coupon unpublished successfully');
+                        toastr.success('Cupón anulado correctamente');
                     }
                 }
             });
