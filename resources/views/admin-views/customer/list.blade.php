@@ -12,7 +12,7 @@
         <div class="page-header">
             <div class="row align-items-center mb-3">
                 <div class="col-sm">
-                    <h1 class="page-header-title">Clientes
+                    <h1 class="page-header-title">Clienteskyuuytiyiyio
                         <span class="badge badge-soft-dark ml-2">{{\App\User::count()}}</span>
                     </h1>
                 </div>
@@ -216,45 +216,49 @@
 
                     <tbody>
                     @foreach($customers as $key=>$customer)
-                        <tr class="">
-                            <td class="">
-                                {{$key+1}}
-                            </td>
-                            <td class="table-column-pl-0">
-                                <a href="{{route('admin.customer.view',[$customer['id']])}}">
-                                    {{$customer['f_name']." ".$customer['l_name']}}
-                                </a>
-                            </td>
-                            <td>
-                                {{$customer['email']}}
-                            </td>
-                            <td>
-                               {{$customer['phone']}}
-                            </td>
-                            <td>
-                                <label class="badge badge-soft-info">
-                                    {{$customer->orders->count()}}
-                                </label>
-                            </td>
-                            <td>
-                                <div class="dropdown">
-                                    <button class="btn btn-outline-secondary dropdown-toggle" type="button"
-                                            id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
-                                            aria-expanded="false">
-                                        <i class="tio-settings"></i>
-                                    </button>
-                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                        <a class="dropdown-item" href="{{route('admin.customer.view',[$customer['id']])}}">
-                                            <i class="tio-visible"></i> {{trans('messages.View')}}
+                        @if(   $customer->orders->count()>0)
+
+                                <tr class="">
+                                    <td class="">
+                                        {{$key+1}}
+                                    </td>
+                                    <td class="table-column-pl-0">
+                                        <a href="{{route('admin.customer.view',[$customer['id']])}}">
+                                            {{$customer['f_name']." ".$customer['l_name']}}
                                         </a>
-                                        {{--<a class="dropdown-item" target="" href="">
-                                            <i class="tio-download"></i> Suspend
-                                        </a>--}}
-                                    </div>
-                                </div>
-                            </td>
-                        </tr>
-                    @endforeach
+                                    </td>
+                                    <td>
+                                        {{$customer['email']}}
+                                    </td>
+                                    <td>
+                                    {{$customer['phone']}}
+                                    </td>
+                                    <td>
+                                        <label class="badge badge-soft-info">
+                                            {{$customer->orders->count()}}
+                                        </label>
+                                    </td>
+                                    <td>
+                                        <div class="dropdown">
+                                            <button class="btn btn-outline-secondary dropdown-toggle" type="button"
+                                                    id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                                    aria-expanded="false">
+                                                <i class="tio-settings"></i>
+                                            </button>
+                                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                <a class="dropdown-item" href="{{route('admin.customer.view',[$customer['id']])}}">
+                                                    <i class="tio-visible"></i> {{trans('messages.View')}}
+                                                </a>
+                                                {{--<a class="dropdown-item" target="" href="">
+                                                    <i class="tio-download"></i> Suspend
+                                                </a>--}}
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                        @endif
+                @endforeach
                     </tbody>
                 </table>
             </div>
@@ -358,8 +362,8 @@
                 },
                 language: {
                     zeroRecords: '<div class="text-center p-4">' +
-                        '<img class="mb-3" src="{{asset('public/assets/admin')}}/svg/illustrations/sorry.svg" alt="Image Description" style="width: 7rem;">' +
-                        '<p class="mb-0">No data to show</p>' +
+                        '<img class="mb-3" src="{{asset('public/assets/admin')}}/svg/illustrations/sorry.svg" alt="Descripción de la imagen" style="width: 7rem;">' +
+                        '<p class="mb-0">No hay datos para mostrar</p>' +
                         '</div>'
                 }
             });
