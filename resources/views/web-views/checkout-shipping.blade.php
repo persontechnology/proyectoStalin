@@ -36,8 +36,7 @@
                 <hr>
                 <div class="checkout_details mt-3">
                     <!-- Steps-->
-                    <!-- Steps--> <!-- Steps--> <!-- Steps--> <!-- Steps-->
-                @include('web-views.partials._checkout-steps',['step'=>2])
+                    @include('web-views.partials._checkout-steps',['step'=>2])
                 <!-- Shipping methods table-->
                     <h2 class="h4 pb-3 mb-2 mt-5">{{ trans('messages.shipping_address')}} {{ trans('messages.choose_shipping_address')}}</h2>
                     @php($shipping_addresses=\App\Model\ShippingAddress::where('customer_id',auth('customer')->id())->get())
