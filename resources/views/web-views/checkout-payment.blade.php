@@ -116,15 +116,5 @@
 @endsection
 
 @push('script')
-    <script>
-        function setPaymentMethod(name) {
-            $.get({
-                url: '{{ url('/') }}/customer/set-payment-method/' + name,
-                success: function () {
-                    $('#' + name).prop('checked', true);
-                    toastr.success(name.replace(/_/g, " ") + ' ha sido seleccionado con éxito');
-                }
-            });
-        }
-    </script>
+
 @endpush
