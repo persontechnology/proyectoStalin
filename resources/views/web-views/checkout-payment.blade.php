@@ -37,15 +37,8 @@
                         </div>
                         <div class="col-md-6 mb-4" style="cursor: pointer">
                             @php($config=\App\CPU\Helpers::get_business_settings('ssl_commerz_payment'))
-                            @if($config['status'])
-                                <div class="card" onclick="setPaymentMethod('ssl_commerz_payment')">
-                                    <div class="card-body">
-                                        <input type="radio" name="payment_gateway" id="ssl_commerz_payment" {{session('payment_method')=='ssl_commerz_payment'?'checked':''}}>
-                                        <span class="checkmark" style="margin-right: 10px"></span>
-                                        <span>{{trans('messages.ssl_commerz_payment')}}</span>
-                                    </div>
-                                </div>
-                            @endif
+                            {{ $config }}
+
                         </div>
                         <div class="col-md-6 mb-4" style="cursor: pointer">
                             @php($config=\App\CPU\Helpers::get_business_settings('paypal'))
