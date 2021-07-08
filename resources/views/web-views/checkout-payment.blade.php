@@ -35,7 +35,7 @@
                                 </div>
                             @endif
                         </div>
-                        <div class="col-md-6 mb-4" style="cursor: pointer">
+                        {{-- <div class="col-md-6 mb-4" style="cursor: pointer">
                             @php($config=\App\CPU\Helpers::get_business_settings('ssl_commerz_payment'))
 
                             @if($config['status'])
@@ -47,7 +47,7 @@
                                     </div>
                                 </div>
                             @endif
-                        </div>
+                        </div> --}}
                         <div class="col-md-6 mb-4" style="cursor: pointer">
                             @php($config=\App\CPU\Helpers::get_business_settings('paypal'))
                             @if($config['status'])
