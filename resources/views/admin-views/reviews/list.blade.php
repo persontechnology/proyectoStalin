@@ -1,6 +1,6 @@
 @extends('layouts.back-end.app')
 
-@section('title','Review List')
+@section('title','Lista de revisión')
 
 @push('css_or_js')
 
@@ -12,7 +12,7 @@
         <div class="page-header">
             <div class="row align-items-center">
                 <div class="col-sm mb-2 mb-sm-0">
-                    <h1 class="page-header-title">Review List</h1>
+                    <h1 class="page-header-title">Lista de revisión</h1>
                 </div>
             </div>
         </div>
@@ -38,16 +38,16 @@
                             <thead class="thead-light">
                             <tr>
                                 <th>#sl</th>
-                                <th style="width: 30%">Product</th>
-                                <th style="width: 25%">Customer</th>
-                                <th>Review</th>
-                                <th>Rating</th>
+                                <th style="width: 30%">Producto</th>
+                                <th style="width: 25%">Cliente</th>
+                                <th>Revisar</th>
+                                <th>Clasificación</th>
                             </tr>
                             <tr>
                                 <th></th>
                                 <th>
                                     <input type="text" id="column1_search" class="form-control form-control-sm"
-                                           placeholder="Search product">
+                                           placeholder="Buscar producto">
                                 </th>
                                 <th></th>
                                 <th></th>

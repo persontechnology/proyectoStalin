@@ -43,24 +43,24 @@
 
                         @if($order['order_status']=='pending')
                             <span class="badge badge-soft-info ml-2 ml-sm-3 text-capitalize">
-                              <span class="legend-indicator bg-info text"></span>{{str_replace('_',' ',$order['order_status'])}}
+                              <span class="legend-indicator bg-info text"></span>Pendiente
                             </span>
                         @elseif($order['order_status']=='failed')
                             <span class="badge badge-danger ml-2 ml-sm-3 text-capitalize">
-                              <span class="legend-indicator bg-info"></span>{{str_replace('_',' ',$order['order_status'])}}
+                              <span class="legend-indicator bg-info"></span>Fállo
                             </span>
                         @elseif($order['order_status']=='processed')
                             <span class="badge badge-soft-warning ml-2 ml-sm-3 text-capitalize">
-                              <span class="legend-indicator bg-warning"></span>{{str_replace('_',' ',$order['order_status'])}}
+                              <span class="legend-indicator bg-warning"></span>Procesado
                             </span>
 
                         @elseif($order['order_status']=='delivered')
                             <span class="badge badge-soft-success ml-2 ml-sm-3 text-capitalize">
-                              <span class="legend-indicator bg-success"></span>{{str_replace('_',' ',$order['order_status'])}}
+                              <span class="legend-indicator bg-success"></span>Entregado
                             </span>
                         @else
                             <span class="badge badge-soft-danger ml-2 ml-sm-3 text-capitalize">
-                              <span class="legend-indicator bg-danger"></span>{{str_replace('_',' ',$order['order_status'])}}
+                              <span class="legend-indicator bg-danger"></span>Devuelto
                             </span>
                         @endif
                         <span class="ml-2 ml-sm-3">
@@ -136,11 +136,13 @@
                             </div>
                             <div class="col-6 pt-2">
                                 <div class="text-right">
-                                    <h6 class="" style="color: #8a8a8a;">
-                                        {{trans('messages.Payment')}} {{trans('messages.Method')}}
-                                        : {{str_replace('_',' ',$order['payment_method'])}}
-                                    </h6>
+                                    @if($order->payment_method=='cash_on_delivery')
+                            <h5 style="color: #414141 !important ; margin-top:4px; margin-bottom:0px;"> Pago Contrarembolso</h5>
 
+                            @else
+                            <h5 style="color: #414141 !important ; margin-top:4px; margin-bottom:0px;">Pago con {{ $order->payment_method }}</h5>
+
+                            @endif
                                 </div>
                             </div>
                         </div>
@@ -232,19 +234,29 @@
                                                     - {{\App\CPU\BackEndHelper::usd_to_currency($order['discount_amount'])}}</h5>
                                             </div>
                                             <div class="col col-md-2 align-self-center  p-0">
-                                                <select name="delivery_status" class="product_status form-control small"
-                                                        style="padding: 0px;" data-id="{{$detail['id']}}">
-                                                    <option
-                                                        value="pending" {{$detail->delivery_status == 'pending'?'selected':''}} >{{trans('messages.Pending')}} </option>
-                                                    <option
-                                                        value="processed" {{$detail->delivery_status == 'processed'?'selected':''}} > {{trans('messages.Processing')}}</option>
-                                                    <option
-                                                        value="delivered" {{$detail->delivery_status == 'delivered'?'selected':''}} >{{trans('messages.Delivered')}} </option>
-                                                    <option
-                                                        value="returned" {{$detail->delivery_status == 'returned'?'selected':''}} > {{trans('messages.Returned')}}</option>
-                                                    <option
-                                                        value="failed" {{$detail->delivery_status == 'failed'?'selected':''}} > {{trans('messages.Failed')}}</option>
-                                                </select>
+                                                @if($order['order_status']=='pending')
+                            <span class="badge badge-soft-info ml-2 ml-sm-3 text-capitalize">
+                              <span class="legend-indicator bg-info text"></span>Pendiente
+                            </span>
+                        @elseif($order['order_status']=='failed')
+                            <span class="badge badge-danger ml-2 ml-sm-3 text-capitalize">
+                              <span class="legend-indicator bg-info"></span>Fállo
+                            </span>
+                        @elseif($order['order_status']=='processed')
+                            <span class="badge badge-soft-warning ml-2 ml-sm-3 text-capitalize">
+                              <span class="legend-indicator bg-warning"></span>Procesado
+                            </span>
+
+                        @elseif($order['order_status']=='delivered')
+                            <span class="badge badge-soft-success ml-2 ml-sm-3 text-capitalize">
+                              <span class="legend-indicator bg-success"></span>Entregado
+                            </span>
+                        @else
+                            <span class="badge badge-soft-danger ml-2 ml-sm-3 text-capitalize">
+                              <span class="legend-indicator bg-danger"></span>Devuelto
+                            </span>
+                        @endif
+
                                             </div>
 
                                             <div class="col col-md-2 align-self-center text-right  ">

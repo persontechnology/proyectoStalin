@@ -247,7 +247,7 @@
             cancelButtonColor: 'default',
             confirmButtonColor: '#377dff',
             cancelButtonText: 'No',
-            confirmButtonText: 'Yes',
+            confirmButtonText: 'Si',
             reverseButtons: true
         }).then((result) => {
             if (result.value) {

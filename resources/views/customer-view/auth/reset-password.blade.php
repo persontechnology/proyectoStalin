@@ -14,12 +14,12 @@
     <div class="container py-4 py-lg-5 my-4">
         <div class="row justify-content-center">
             <div class="col-lg-8 col-md-10">
-                <h2 class="h3 mb-4">Forgot your password?</h2>
-                <p class="font-size-md">Change your password in two easy steps. This helps to keep your new password
-                    secure.</p>
+                <h2 class="h3 mb-4">¿Olvidaste tu contraseña?</h2>
+                <p class="font-size-md">Cambie su contraseña en dos sencillos pasos. Esto ayuda a mantener su nueva contraseña
+                     seguro.</p>
                 <ol class="list-unstyled font-size-md">
-                    <li><span class="text-primary mr-2">1.</span>New Password.</li>
-                    <li><span class="text-primary mr-2">2.</span>Confirm Password.</li>
+                    <li><span class="text-primary mr-2">1.</span>Nueva contraseña.</li>
+                    <li><span class="text-primary mr-2">2.</span>Confirmar Contraseña.</li>
                 </ol>
                 <div class="card py-2 mt-4">
                     <form class="card-body needs-validation" novalidate method="POST"
@@ -28,7 +28,7 @@
                         <div class="form-group" style="display: none">
                             <input type="text" name="reset_token" value="{{$token}}" required>
                         </div>
-                       
+
                         <div class="form-group">
                                 <label for="si-password">{{trans('messages.New')}}{{trans('messages.password')}}</label>
                                 <div class="password-toggle">
@@ -39,7 +39,7 @@
                                             class="czi-eye password-toggle-indicator"></i><span
                                             class="sr-only">{{trans('messages.Show')}} {{trans('messages.password')}} </span>
                                     </label>
-                                    <div class="invalid-feedback">Please provide valid password.</div>
+                                    <div class="invalid-feedback">Proporcione una contraseña válida.</div>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -52,11 +52,11 @@
                                             class="czi-eye password-toggle-indicator"></i><span
                                             class="sr-only">{{trans('messages.Show')}} {{trans('messages.password')}} </span>
                                     </label>
-                                    <div class="invalid-feedback">Please provide valid password.</div>
+                                    <div class="invalid-feedback">Proporcione una contraseña válida.</div>
                                 </div>
                             </div>
-                      
-                        <button class="btn btn-primary" type="submit">Reset password</button>
+
+                        <button class="btn btn-primary" type="submit">Restablecer la contraseña</button>
                     </form>
                 </div>
             </div>

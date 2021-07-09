@@ -26,7 +26,7 @@
         <div class="modal-dialog modal-lg modal-dialog-scrollable">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Order No - {{$orderDetails['id']}}</h5>
+                    <h5 class="modal-title">Pedido No - {{$orderDetails['id']}}</h5>
                     <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span
                             aria-hidden="true">&times;</span></button>
                 </div>
@@ -63,10 +63,10 @@
                                 </div>
                             </div>
                             <div class="pt-2 pl-sm-3 mx-auto mx-sm-0 text-center">
-                                <div class="text-muted mb-2">Quantitygfgjfgjg:</div>{{$product['qty']}}
+                                <div class="text-muted mb-2">Cantidad:</div>{{$product['qty']}}
                             </div>
                             <div class="pt-2 pl-sm-2 mx-auto mx-sm-0 text-center">
-                                <div class="text-muted mb-2">Tax:
+                                <div class="text-muted mb-2">Impuesto(12%):
                                 </div>{{\App\CPU\Helpers::currency_converter($product['tax'])}}
                             </div>
                             <div class="pt-2 pl-sm-3 mx-auto mx-sm-0 text-center">
@@ -88,17 +88,17 @@
                     </div>
                     <div class="px-2 py-1">
                         <span
-                            class="text-muted">Shipping:&nbsp;</span>{{\App\CPU\Helpers::currency_converter($total_shipping_cost)}}
+                            class="text-muted">Método de envío:&nbsp;</span>{{\App\CPU\Helpers::currency_converter($total_shipping_cost)}}
                         <span></span>
                     </div>
                     <div class="px-2 py-1">
-                        <span class="text-muted">Tax:&nbsp;</span> {{\App\CPU\Helpers::currency_converter($total_tax)}}
+                        <span class="text-muted">Impuesto(12%):&nbsp;</span> {{\App\CPU\Helpers::currency_converter($total_tax)}}
                         <span></span>
                     </div>
 
                     <div class="px-2 py-1">
                         <span
-                            class="text-muted">Discount:&nbsp;</span>
+                            class="text-muted">Descuento:&nbsp;</span>
                         - {{\App\CPU\Helpers::currency_converter($product['discount'])}}
                         <span></span>
                     </div>
@@ -117,13 +117,13 @@
     <div class="container">
 
         <div class="pt-3 pb-3">
-            <h2>My Order</h2>
+            <h2>Mi pedido</h2>
         </div>
         <div class="btn-primary">
             <div class="container d-lg-flex justify-content-between py-2 py-lg-3">
 
                 <div class="order-lg-1 pr-lg-4 text-center text-lg-left">
-                    <h4 class="text-light mb-0">Order ID : <span
+                    <h4 class="text-light mb-0">PEDIDO ID : <span
                             class="h4 font-weight-normal text-light">{{$orderDetails['id']}}</span></h4>
                 </div>
             </div>
@@ -136,20 +136,65 @@
         <div class="row" style="background: #e2f0ff; margin: 0; width: 100%;">
             <div class="col-sm-4">
                 <div class="pt-2 pb-2 text-center rounded-lg">
-                    <span class="font-weight-medium text-dark mr-2">Order Status:</span><br>
-                    <span class="text-uppercase ">{{$orderDetails['order_status']}}</span>
-                    {{-- <span class="text-uppercase ">Courier</span> --}}
+                    <span class="font-weight-medium text-dark mr-2">Estado de Pedido:</span><br>
+                    @if($orderDetails['order_status']=='pending')
+                    <span class="text-uppercase ">PENDIENTE</span>
+                    @elseif(($orderDetails['order_status']=='processed'))
+                    <span class="text-uppercase ">PROCESANDO</span>
+                    @elseif(($orderDetails['order_status']=='returned'))
+                    <span class="text-uppercase ">DEVUELTO</span>
+                    @elseif(($orderDetails['order_status']=='delivered'))
+                    <span class="text-uppercase ">ENTREGADO</span>
+                    @else
+                    <span class="text-uppercase ">FÁLLO</span>
+
+                    @endif
+
+
+                    {{-- <span class="text-uppercase ">Courier</span>
+                    @if($order['order_status']=='pending')
+                                            <span class="badge badge-soft-success ml-sm-3">
+                                                <span class="legend-indicator bg-success"></span>Pendiente
+                                            </span>
+                                        @elseif($order['order_status']=='processed')
+                                            <span class="badge badge-soft-danger ml-sm-3">
+                                                <span class="legend-indicator bg-danger"></span>Procesando
+                                            </span>
+                                            @elseif($order['order_status']=='returned')
+                                            <span class="badge badge-soft-danger ml-sm-3">
+                                                <span class="legend-indicator bg-danger"></span>Devuelto
+                                            </span>
+                                            @elseif($order['order_status']=='delivered')
+                                            <span class="badge badge-soft-danger ml-sm-3">
+                                                <span class="legend-indicator bg-danger"></span>Entregado
+                                            </span>
+                                            @else
+                                            <span class="badge badge-soft-danger ml-sm-3">
+                                                <span class="legend-indicator bg-danger"></span>Fállo
+                                            </span>
+
+                                        @endif
+
+
+
+                    --}}
+
                 </div>
             </div>
             <div class="col-sm-4">
                 <div class="pt-2 pb-2 text-center rounded-lg">
-                    <span class="font-weight-medium text-dark mr-2">Payment Status:</span> <br>
-                    <span class="text-uppercase">{{$orderDetails['payment_status']}}</span>
+                    <span class="font-weight-medium text-dark mr-2">Estado de Pago:</span> <br>
+                    @if($orderDetails['payment_status']=='unpaid')
+                    <span class="text-uppercase">Sin pagar</span>
+                    @else
+                    <span class="text-uppercase">Pagado</span>
+                    @endif
+
                 </div>
             </div>
             <div class="col-sm-4">
                 <div class="pt-2 pb-2 text-center rounded-lg">
-                    <span class="font-weight-medium text-dark mr-2"> Estimated Delivary Date: </span> <br>
+                    <span class="font-weight-medium text-dark mr-2"> Fecha estimada de entrega: </span> <br>
                     <span class="text-uppercase"
                           style="font-weight: 600; color: {{$web_config['primary_color']}}">{{Carbon\Carbon::createFromFormat('Y-m-d H:i:s',$orderDetails['updated_at'])->format('Y-m-d')}}</span>
                 </div>
@@ -169,8 +214,8 @@
                                         <i class="czi-check"></i>
                                     </div>
                                     <div class="media-body" style="text-align: center;">
-                                        <div class="media-tab-subtitle text-muted font-size-xs mb-1">First step</div>
-                                        <h6 class="media-tab-title text-nowrap mb-0">Order placed</h6>
+                                        <div class="media-tab-subtitle text-muted font-size-xs mb-1">Primer paso</div>
+                                        <h6 class="media-tab-title text-nowrap mb-0">Pedido realizado</h6>
                                     </div>
                                 </div>
                             </div>
@@ -186,8 +231,8 @@
                                         @endif
                                     </div>
                                     <div class="media-body" style="text-align: center;">
-                                        <div class="media-tab-subtitle text-muted font-size-xs mb-1">Second step</div>
-                                        <h6 class="media-tab-title text-nowrap mb-0">Processed order</h6>
+                                        <div class="media-tab-subtitle text-muted font-size-xs mb-1">Segundo paso</div>
+                                        <h6 class="media-tab-title text-nowrap mb-0">Orden procesada</h6>
                                     </div>
                                 </div>
                             </div>
@@ -203,8 +248,8 @@
                                         @endif
                                     </div>
                                     <div class="media-body" style="text-align: center;">
-                                        <div class="media-tab-subtitle text-muted font-size-xs mb-1">Third step</div>
-                                        <h6 class="media-tab-title text-nowrap mb-0">Product on Shipped</h6>
+                                        <div class="media-tab-subtitle text-muted font-size-xs mb-1">Tercer paso</div>
+                                        <h6 class="media-tab-title text-nowrap mb-0">Producto enviado</h6>
                                     </div>
                                 </div>
                             </div>
@@ -229,13 +274,13 @@
                     @elseif($orderDetails['order_status']=='returned')
                         <li class="nav-item">
                             <div class="nav-link" style="text-align: center;">
-                                <h1 class="text-warning">Product Successfully Returned</h1>
+                                <h1 class="text-warning">Producto devuelto con éxito</h1>
                             </div>
                         </li>
                     @else
                         <li class="nav-item">
                             <div class="nav-link" style="text-align: center;">
-                                <h1 class="text-danger">Sorry we can't complete your order</h1>
+                                <h1 class="text-danger">Lo sentimos, no podemos completar su pedido.</h1>
                             </div>
                         </li>
                     @endif
@@ -247,7 +292,7 @@
         <div class="d-sm-flex flex-wrap justify-content-between align-items-center text-center pt-3">
             <div class="custom-control custom-checkbox mt-1 mr-3">
             </div>
-            <a class="btn btn-primary btn-sm mt-2 mb-2" href="#order-details" data-toggle="modal">View Order Details</a>
+            <a class="btn btn-primary btn-sm mt-2 mb-2" href="#order-details" data-toggle="modal">Ver detalles del Pedido</a>
         </div>
     </div>
 

@@ -241,8 +241,14 @@
                     <td>
                         <div style="float:right ">
                             <h4 style="color: #130505 !important; margin:0px;">Detalle de Pago</h4>
+                            @if($order->payment_method=='cash_on_delivery')
+                            <h5 style="color: #414141 !important ; margin-top:4px; margin-bottom:0px;">Contrarembolso</h5>
+
+                            @else
                             <h5 style="color: #414141 !important ; margin-top:4px; margin-bottom:0px;">{{ $order->payment_method }}</h5>
-                            @if($order['payment_status']=='paid')
+
+                            @endif
+                             @if($order['payment_status']=='paid')
                             <span class="badge badge-soft-success ml-sm-3">
                                 <span class="legend-indicator bg-success"></span>{{trans('messages.Paid')}}
                             </span>

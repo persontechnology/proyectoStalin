@@ -432,7 +432,10 @@
                         {{trans('messages.generate_invoice')}}
                     </a>
 
-
+                    <a id="track_order" class="btn btn-secondary" type="button"
+                    style="width:50%; color: white">
+                     Seguir {{trans('messages.Order')}}
+                 </a>
                 </div>
             </section>
         </div>

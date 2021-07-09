@@ -104,11 +104,11 @@
 <!-- end preheader -->
 <div class="card">
     <div class="card-header">
-        Reset Your password.
+        Restablecer su contraseña.
     </div>
     <div class="card-body">
         <a style="background: darkblue" class="btn btn-primary" href="{{$url}}">
-          Click to Reset
+            Haga clic para restablecer
         </a>
     </div>
 </div>
