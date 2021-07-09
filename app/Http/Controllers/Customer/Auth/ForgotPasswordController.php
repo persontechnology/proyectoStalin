@@ -35,11 +35,11 @@ class ForgotPasswordController extends Controller
             $reset_url = url('/') . '/customer/auth/reset-password?token=' . $token;
             Mail::to($customer['email'])->send(new \App\Mail\PasswordResetMail($reset_url));
 
-            Toastr::success('Check your email. Password reset url sent.');
+            Toastr::success('Consultar su correo electrónico. Se envió la URL de restablecimiento de contraseña.');
             return back();
         }
 
-        Toastr::error('No such email found!');
+        Toastr::error('¡No se encontró ese correo electrónico!');
         return back();
     }
 
@@ -66,10 +66,10 @@ class ForgotPasswordController extends Controller
                 DB::table('password_resets')->where(['token' => $request['reset_token']])->delete();
                 return redirect('/');
             }
-            Toastr::error('Password did not match.');
+            Toastr::error('La contraseña no coincidió.');
             return back();
         }
-        Toastr::error('Invalid URL.');
+        Toastr::error('URL invalida.');
         return redirect('/');
     }
 }
