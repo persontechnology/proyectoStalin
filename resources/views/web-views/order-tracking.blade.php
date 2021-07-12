@@ -265,8 +265,8 @@
                                         @endif
                                     </div>
                                     <div class="media-body" style="text-align: center;">
-                                        <div class="media-tab-subtitle text-muted font-size-xs mb-1">Fourth step</div>
-                                        <h6 class="media-tab-title text-nowrap mb-0">Product dispatched</h6>
+                                        <div class="media-tab-subtitle text-muted font-size-xs mb-1">Cuarto paso</div>
+                                        <h6 class="media-tab-title text-nowrap mb-0">Producto enviado</h6>
                                     </div>
                                 </div>
                             </div>
