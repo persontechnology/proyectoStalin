@@ -339,7 +339,7 @@
                                     @php($this_month=\App\Model\Order::where(['order_status'=>'delivered'])->whereBetween('updated_at', [date('Y-m-01'), date('Y-m-30')])->sum('order_amount'))
                                     @php($amount=0)
                                     <span
-                                        class="h1 mb-0">@foreach($array as $ar)@php($amount+=$ar)@endforeach{{\App\CPU\BackEndHelper::usd_to_currency($amount)." ".\App\CPU\BackEndHelper::currency_symbol()}}</span>
+                                        class="h1 mb-0">@foreach($array as $ar)@php($amount+=$ar)@endforeach{{\App\CPU\BackEndHelper::currency_symbol()." ".\App\CPU\BackEndHelper::usd_to_currency($amount)}}</span>
                                     <span class="text-success ml-2">
                                         @php($amount=$amount!=0?$amount:0.01)
                                         <i class="tio-trending-up"></i> {{round(($this_month/$amount)*100)}} %
@@ -393,7 +393,7 @@
                                     "fontColor": "#97a4af",
                                     "fontFamily": "Open Sans, sans-serif",
                                     "padding": 10,
-                                    "postfix": " {{\App\CPU\BackEndHelper::currency_symbol()}}"
+                                    "postfix": " Dólares"
                                   }
                                 }],
                                 "xAxes": [{
