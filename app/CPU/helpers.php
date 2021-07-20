@@ -212,9 +212,9 @@ class Helpers
         $highest_price = convert_price($highest_price - Helpers::get_product_discount($product, $highest_price));
 
         if ($lowest_price == $highest_price) {
-            return number_format($lowest_price, 2) . currency_symbol();
+            return currency_symbol().number_format($lowest_price, 2) ;
         }
-        return number_format($lowest_price, 2) . currency_symbol() . ' - ' . number_format($highest_price, 2) . currency_symbol();
+        return currency_symbol() .number_format($lowest_price, 2) .  ' - '. currency_symbol() . number_format($highest_price, 2) ;
     }
 
     public static function get_product_discount($product, $price)
@@ -389,7 +389,7 @@ if (!function_exists('currency_symbol')) {
 if (!function_exists('format_price')) {
     function format_price($price)
     {
-        return number_format($price, 2) . currency_symbol();
+        return  currency_symbol(). number_format($price, 2) ;
     }
 }
 //converts currency to home default currency

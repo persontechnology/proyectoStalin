@@ -106,10 +106,12 @@
                             <thead class="thead-light">
                             <tr>
                                 <th>{{trans('messages.SL#')}}</th>
+
                                 <th>{{trans('messages.Product Name')}}</th>
                                 <th>{{trans('messages.purchase_price')}}</th>
                                 <th>{{trans('messages.selling_price')}}</th>
                                 <th>{{trans('messages.featured')}}</th>
+                                <th>CANTIDAD STOCK</th>
                                 <th>{{trans('messages.status')}}</th>
                                 <th style="width: 5px">{{trans('messages.Action')}}</th>
                             </tr>
@@ -129,6 +131,7 @@
                                     <td>
                                         {{ \App\CPU\BackEndHelper::usd_to_currency($p['unit_price']).\App\CPU\BackEndHelper::currency_symbol()}}
                                     </td>
+
                                     <td>
                                         <label class="switch">
                                             <input type="checkbox"
@@ -137,12 +140,20 @@
                                         </label>
                                     </td>
                                     <td>
+
+
+                                            <span>    {{substr($p['current_stock'],0,20)}}{{strlen($p['current_stock'])>20?'...':''}}</span>
+
+                                    </td>
+                                    <td>
                                         <label class="switch">
                                             <input type="checkbox" class="status"
                                                    id="{{$p['id']}}" {{$p->status == 1?'checked':''}}>
                                             <span class="slider round"></span>
                                         </label>
                                     </td>
+
+
                                     <td>
                                         <!-- Dropdown -->
                                         <div class="dropdown">

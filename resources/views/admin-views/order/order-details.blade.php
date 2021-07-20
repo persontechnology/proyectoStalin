@@ -262,7 +262,7 @@
                                             <div class="col col-md-2 align-self-center text-right  ">
                                                 @php($subtotal=$detail['price']*$detail->qty+$detail['tax']-$order['discount_amount'])
 
-                                                <h5 style="font-size: 12px">{{\App\CPU\BackEndHelper::usd_to_currency($subtotal).' '.\App\CPU\BackEndHelper::currency_symbol()}}</h5>
+                                                <h5 style="font-size: 12px">{{\App\CPU\BackEndHelper::currency_symbol().' '.\App\CPU\BackEndHelper::usd_to_currency($subtotal)}}</h5>
                                             </div>
                                         </div>
                                     </div>
@@ -283,12 +283,12 @@
                                 <dl class="row text-sm-right">
                                     <dt class="col-sm-6">{{trans('messages.Shipping')}}</dt>
                                     <dd class="col-sm-6 border-bottom">
-                                        <strong>{{\App\CPU\BackEndHelper::usd_to_currency($shipping).' '.\App\CPU\BackEndHelper::currency_symbol()}}</strong>
+                                        <strong>{{\App\CPU\BackEndHelper::currency_symbol().' '.\App\CPU\BackEndHelper::usd_to_currency($shipping)}}</strong>
                                     </dd>
 
                                     <dt class="col-sm-6">{{trans('messages.Total')}}</dt>
                                     <dd class="col-sm-6">
-                                        <strong>{{\App\CPU\BackEndHelper::usd_to_currency($total+$shipping).' '.\App\CPU\BackEndHelper::currency_symbol()}}</strong>
+                                        <strong>{{\App\CPU\BackEndHelper::currency_symbol().' '.\App\CPU\BackEndHelper::usd_to_currency($total+$shipping)}}</strong>
                                     </dd>
                                 </dl>
                                 <!-- End Row -->

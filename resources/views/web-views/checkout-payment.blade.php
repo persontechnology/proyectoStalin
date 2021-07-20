@@ -32,6 +32,7 @@
                                         <span class="checkmark" style="margin-right: 10px"></span>
                                         <span>{{trans('messages.cash_on_delivery')}}</span>
                                     </div>
+                                    <span style="color: #2e0f9b; text-align: justify;">Envío contra reembolso, a veces llamado cobro a la entrega, es la venta de mercancías por correo, donde el pago se hace cuando se recibe el producto, en lugar de por adelantado.</span>
                                 </div>
                             @endif
                         </div>
@@ -57,6 +58,8 @@
                                         <span class="checkmark" style="margin-right: 10px"></span>
                                         <span>{{trans('messages.paypal_online_payent')}}</span>
                                     </div>
+                                    <span style="color: #2e0f9b; text-align: justify;">PayPal es un método de pago en línea que te sigue vayas donde vayas. Paga como quieras. Asocia tus tarjetas de crédito a tu cuenta PayPal y, cuando quieras pagar, simplemente inicia sesión con tu correo electrónico y contraseña y elige la tarjeta que deseas usar para hacer el pago.</span>
+
                                 </div>
                             @endif
                         </div>

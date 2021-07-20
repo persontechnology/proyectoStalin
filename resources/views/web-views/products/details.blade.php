@@ -368,7 +368,7 @@
                                                        id="{{ $choice->name }}-{{ $option }}"
                                                        name="{{ $choice->name }}" value="{{ $option }}"
                                                        @if($key == 0) checked @endif>
-                                                <label for="{{ $choice->name }}-{{ $option }}">{{ $option }}</label>
+                                                <label for="{{ $choice->name }}-{{ $option }}" style="width: 20%; font-size: 120%">{{ $option }}</label>
                                             </li>
                                         @endforeach
                                     </ul>

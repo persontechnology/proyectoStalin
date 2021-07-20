@@ -138,7 +138,7 @@
         <div class="product-price">
             <span class="text-accent ptp">
             {{\App\CPU\Helpers::currency_converter(
-            $product->unit_price-(\App\CPU\Helpers::get_product_discount($product,$product->unit_price))
+             $product->unit_price-(\App\CPU\Helpers::get_product_discount($product,$product->unit_price))
             )}}
             </span>
             @if($product->discount > 0)

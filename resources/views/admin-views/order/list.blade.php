@@ -432,7 +432,7 @@
                                     <span class="text-dark">{{$order['payment_method']}}</span>
                                 </div>
                             </td>
-                            <td> {{\App\CPU\BackEndHelper::usd_to_currency($order->order_amount).' '.\App\CPU\BackEndHelper::currency_symbol()}}</td>
+                            <td>{{ \App\CPU\BackEndHelper::currency_symbol() .' '.\App\CPU\BackEndHelper::usd_to_currency($order->order_amount)}}</td>
                               <td class="text-capitalize">
                                   @if($order['order_status']=='pending')
                                       <span class="badge badge-soft-info ml-2 ml-sm-3">

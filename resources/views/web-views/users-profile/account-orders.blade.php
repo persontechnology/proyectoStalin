@@ -1,6 +1,6 @@
 @extends('layouts.front-end.app')
 
-@section('title','My Order List')
+@section('title','Mi lista de pedidos')
 
 @push('css_or_js')
     <link rel="stylesheet" media="screen"

@@ -106,7 +106,7 @@
     <div class="card-header">
         Su orden ha sido puesta.
         PEDIDO ID : {{$id}}.
-        La contactaremos pronto.
+        Le contactaremos pronto.
     </div>
 </div>
 

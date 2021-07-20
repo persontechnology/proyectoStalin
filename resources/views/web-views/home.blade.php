@@ -596,11 +596,7 @@
                                                                                     </a>
                                                                                 </h3>
                                                                                 <div class="featured_product-price">
-                                                                        <span class="text-accent ptp">
-                                                                            {{\App\CPU\Helpers::currency_converter(
-                                                                            $featured_deals->products[$increment]->product->unit_price-(\App\CPU\Helpers::get_product_discount($featured_deals->products[$increment]->product,$featured_deals->products[$increment]->product->unit_price))
-                                                                            )}}
-                                                                        </span>
+
                                                                                 </div>
                                                                             </div>
                                                                         </div>
