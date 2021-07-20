@@ -327,7 +327,7 @@
                     $y=12;
                     $total=\App\Model\Order::whereBetween('created_at', [date('Y-'.$x.'-01'), date('Y-'.$y.'-30')])->count()
                 @endphp
-                <h6 class="card-subtitle mb-0">Total orders of {{date('Y')}}: <span
+                <h6 class="card-subtitle mb-0">Órdenes totales del {{date('Y')}}: <span
                         class="h3 ml-sm-2">{{round($total)}}</span>
                 </h6>
 
