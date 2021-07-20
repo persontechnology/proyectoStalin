@@ -40,7 +40,7 @@ class LoginController extends Controller
         }
 
         return redirect()->back()->withInput($request->only('email', 'remember'))
-            ->withErrors(['Credentials does not match.']);
+            ->withErrors(['Las credenciales no coinciden.']);
     }
 
     public function logout(Request $request)

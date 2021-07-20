@@ -141,7 +141,7 @@
                                     <div class="media-body">
                                         <h4 class="mb-1">{{trans('messages.Total')}} {{trans('messages.Sold')}} </h4>
                                         <span class="font-size-sm text-success">
-                                          <i class="tio-trending-up"></i> {{round(abs(\App\CPU\BackEndHelper::usd_to_currency($total_sold-$total_tax)))}} {{\App\CPU\BackEndHelper::currency_symbol()}}
+                                          <i class="tio-trending-up"></i> {{\App\CPU\BackEndHelper::currency_symbol()}} {{round(abs(\App\CPU\BackEndHelper::usd_to_currency($total_sold-$total_tax)))}}
                                         </span>
                                     </div>
 
@@ -188,7 +188,7 @@
                                     <div class="media-body">
                                         <h4 class="mb-1">{{trans('messages.Total')}} {{trans('messages.Tax')}} </h4>
                                         <span class="font-size-sm text-warning">
-                                          <i class="tio-trending-up"></i>  {{round(abs(\App\CPU\BackEndHelper::usd_to_currency($total_tax)))}} {{\App\CPU\BackEndHelper::currency_symbol()}}
+                                          <i class="tio-trending-up"></i> {{\App\CPU\BackEndHelper::currency_symbol()}} {{round(abs(\App\CPU\BackEndHelper::usd_to_currency($total_tax)))}}
                                         </span>
                                     </div>
                                 </div>
@@ -231,7 +231,7 @@
                     $total_sold=\App\Model\Order::where(['order_status'=>'delivered'])->whereBetween('created_at', [date('y-01-01'), date('y-12-31')])->sum('order_amount')
                 @endphp
                 <h6 class="card-subtitle mb-0">Venta total del {{date('Y')}} :<span
-                        class="h3 ml-sm-2"> {{\App\CPU\BackEndHelper::usd_to_currency($total_sold)." ".\App\CPU\BackEndHelper::currency_symbol()}}</span>
+                        class="h3 ml-sm-2"> {{\App\CPU\BackEndHelper::currency_symbol()." ".\App\CPU\BackEndHelper::usd_to_currency($total_sold)}}</span>
                 </h6>
 
                 <!-- Unfold -->
@@ -314,7 +314,7 @@
                                   "fontColor": "#97a4af",
                                   "fontFamily": "Open Sans, sans-serif",
                                   "padding": 10,
-                                  "postfix": " {{\App\CPU\BackEndHelper::currency_symbol()}}"
+                                  "postfix": " Dólares"
                                 }
                               }],
                               "xAxes": [{
