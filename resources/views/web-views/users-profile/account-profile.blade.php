@@ -106,15 +106,15 @@
             padding: 20px;
         }
         @media (max-width:350px){
-            
+
         .photoHeader {
             border: none!important;
             margin-left:  0.1px !important;
             margin-right:  0.1px !important;
             padding:  0.1px !important;
-            
+
         }
-        
+
         }
 
         @media (max-width: 600px) {
@@ -183,7 +183,7 @@
                                            class="spandHeadO">
                                         {{trans('messages.change_your_profile')}}
                                     </label>
-                                    <span style="color: red;font-size: 10px">( * Image ratio should be 1:1 )</span>
+                                    <span style="color: red;font-size: 10px">( * La proporción de la imagen debe ser 1: 1 )</span>
                                     <input id="files" name="image" style="visibility:hidden;" type="file">
                                 </div>
 

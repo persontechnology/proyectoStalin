@@ -1,6 +1,6 @@
 @extends('layouts.front-end.app')
 
-@section('title','My Address')
+@section('title','Mis Direcciones')
 
 @push('css_or_js')
     <link rel="stylesheet" media="screen"
@@ -234,7 +234,7 @@
                                 </li>
                                 <li>
                                     <input type="radio" id="a50" name="addressAs" value="home"/>
-                                    <label for="a50" class="component">{{trans('messages.Home')}}</label>
+                                    <label for="a50" class="component">Casa</label>
                                 </li>
                                 <li>
                                     <input type="radio" id="a75" name="addressAs" value="office" checked="checked"/>
@@ -325,7 +325,7 @@
                                 {{-- <div class="card cardColor"> --}}
                                     <div class="card-header" style=" border: 1px solid {{$web_config['primary_color']}}; padding: 5px;">
                                         <i class="fa fa-thumb-tack fa-2x iconHad" aria-hidden="true"></i>
-                                        <span class="namHad"> {{$shippingAddress['address_type']}} {{trans('messages.address')}} </span>
+                                        <span class="namHad">  {{trans('messages.address')}} </span>
                                         {{-- <div> --}}
                                         <span class="float-right iconSp">
                                             <a class="" id="edit" data-toggle="modal" data-target="#editAddress_{{$shippingAddress->id}}">

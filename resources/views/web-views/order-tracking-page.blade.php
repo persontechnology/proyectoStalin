@@ -60,11 +60,11 @@
 
                                 <div class="form-group">
                                     <input class="form-control prepended-form-control" type="text" name="order_id"
-                                           placeholder="Enter Your Order ID" required>
+                                           placeholder="Ingrese su ID de pedido" required>
                                 </div>
                                 <div class="form-group">
                                     <input class="form-control prepended-form-control" type="text" name="phone_number"
-                                           placeholder="Enter Your Phone Number" required>
+                                           placeholder="Ingrese su número telefónico" required>
                                 </div>
                                 <div class="input-group-append">
                                     <button class="btn btn-primary" type="submit" name="trackOrder">Ver Estado Pedido</button>

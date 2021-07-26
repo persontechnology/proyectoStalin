@@ -127,7 +127,7 @@
 @else
     <center>
         <h6 class="text-muted">
-            No data found.
+            Datos no encontrados.
         </h6>
     </center>
 @endif
