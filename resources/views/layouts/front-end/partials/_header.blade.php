@@ -138,7 +138,7 @@
     <!-- Topbar-->
     <div class="topbar">
         <div class="container ">
-            <div>
+            <div >
                 @php
                     $locale = session()->get('locale') ;
                     if ($locale==""){
@@ -159,7 +159,7 @@
                     $company_web_logo =$web_config['web_logo']->value;
                     $company_mobile_logo =$web_config['mob_logo']->value;
                 @endphp
-                <div class="topbar-text dropdown disable-autohide mr-3">
+                <div class="topbar-text dropdown disable-autohide mr-3" hidden>
                     <a class="topbar-link dropdown-toggle" href="" data-toggle="dropdown">
                         @foreach(json_decode($language['value'],true) as $data)
                             @if($data['code']==$locale)
@@ -187,7 +187,7 @@
                 </div>
 
 
-                <div class="topbar-text dropdown disable-autohide">
+                <div class="topbar-text dropdown disable-autohide" hidden>
                     <a class="topbar-link dropdown-toggle" href="#" data-toggle="dropdown">
                         <span>{{$currency_code}} {{$currency_symbol}}</span>
                     </a>
