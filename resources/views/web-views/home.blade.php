@@ -963,6 +963,7 @@
                     @endforeach
                 </div>
             </div>
+
             <!-- Top rated-->
             <div class="col-12 col-sm-6 col-md-4 mb-2 py-3">
                 <div class="widget">
@@ -1006,7 +1007,13 @@
                     @endforeach
                 </div>
             </div>
+
         </div>
+        <CENTER> <h1>COMO LLEGAR GARAGE&REPUBLIK</h1></CENTER>
+        <div class="contact-form">
+            <div class="map-responsive">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.828698647616!2d-78.62234148524607!3d-1.2761585990692026!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMcKwMTYnMzQuMiJTIDc4wrAzNycxMi42Ilc!5e0!3m2!1ses!2sec!4v1628121725925!5m2!1ses!2sec" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe></div>
+       </div>
     </section>
 @endsection
 
